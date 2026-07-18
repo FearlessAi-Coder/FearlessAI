@@ -1,6 +1,10 @@
 async function askAI(){
 
-    let question = document.getElementById("question").value;
+    document.getElementById("chat-history").innerHTML += `
+<div class="message user-message">
+<b>You:</b> ${question}
+</div>
+`;
     let output = document.getElementById("output");
 
     if(question === ""){
@@ -27,7 +31,13 @@ async function askAI(){
 
         let data = await response.json();
 
-        output.innerHTML = data.answer;
+       document.getElementById("chat-history").innerHTML += `
+<div class="message ai-message">
+<b>FearlessAI:</b> ${data.answer}
+</div>
+`;
+
+output.innerHTML = "";
 
     } catch(error) {
 

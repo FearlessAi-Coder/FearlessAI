@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FearlessAI</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>🤖 FearlessAI</h1>
-    <p>Your personal AI assistant.</p>
+<div class="container">
 
-    <input type="text" id="userInput" placeholder="Type something...">
+<h1>FearlessAI</h1>
 
-    <button onclick="sayHello()">Send</button>
+<p>Your fearless AI assistant.</p>
 
-    <p id="output"></p>
+<div class="chat-box">
 
-    <script src="script.js"></script>
+<input id="question" placeholder="Ask FearlessAI something...">
+
+<button onclick="askAI()">Ask</button>
+
+<p id="output"></p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>

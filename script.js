@@ -46,3 +46,10 @@ output.innerHTML = "";
     }
 
 }
+function clearChat(){
+
+    document.getElementById("chat-history").innerHTML = "";
+
+    document.getElementById("output").innerHTML = "";
+
+}

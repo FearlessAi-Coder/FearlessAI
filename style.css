@@ -139,3 +139,14 @@ button:nth-of-type(2){
 .ai-message {
     border-left: 4px solid white;
 }
+.logo {
+    font-size: 50px;
+    font-weight: bold;
+    color: #00ff99;
+    text-shadow: 0 0 20px #00ff99;
+    margin-bottom: 10px;
+}
+
+.logo span {
+    font-size: 55px;
+}

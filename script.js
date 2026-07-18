@@ -53,3 +53,8 @@ function clearChat(){
     document.getElementById("output").innerHTML = "";
 
 }
+function openChat(){
+
+    document.getElementById("question").focus();
+
+}

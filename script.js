@@ -1,28 +1,31 @@
-async function askAI(){
+async function askAI() {
 
-document.getElementById("chat-history").innerHTML += `
-<div class="message ai-message">
-<b>FearlessAI:</b> ${data.answer}
-
-<br><br>
-
-<button onclick="copyAnswer('${data.answer}')">
-Copy Answer 📋
-</button>
-
-</div>
-`;
+    let question = document.getElementById("question").value;
     let output = document.getElementById("output");
+    let chatHistory = document.getElementById("chat-history");
 
-    if(question === ""){
+    if (question.trim() === "") {
         output.innerHTML = "Ask me something first!";
         return;
     }
 
-   output.innerHTML = `
-   FearlessAI is thinking
-   <span class="dots">...</span>
-   `;
+    // Show the user's message
+    chatHistory.innerHTML += `
+    <div class="message user-message">
+        <b>You:</b> ${question}
+        <br>
+        <small>${new Date().toLocaleTimeString()}</small>
+    </div>
+    `;
+
+    // Clear the input box
+    document.getElementById("question").value = "";
+
+    // Show thinking animation
+    output.innerHTML = `
+    FearlessAI is thinking
+    <span class="dots">...</span>
+    `;
 
     try {
 
@@ -38,37 +41,41 @@ Copy Answer 📋
 
         let data = await response.json();
 
-       document.getElementById("chat-history").innerHTML += `
-<div class="message ai-message">
-<b>FearlessAI:</b> ${data.answer}
-</div>
-`;
+        // Show AI response
+        chatHistory.innerHTML += `
+        <div class="message ai-message">
+            <b>FearlessAI:</b> ${data.answer}
+            <br>
+            <small>${new Date().toLocaleTimeString()}</small>
 
-output.innerHTML = "";
+            <br><br>
 
-    } catch(error) {
+            <button onclick="copyAnswer('${data.answer.replace(/'/g, "\\'")}')">
+                Copy Answer 📋
+            </button>
+        </div>
+        `;
+
+        output.innerHTML = "";
+
+    } catch (error) {
 
         output.innerHTML = "FearlessAI is offline right now.";
 
     }
 
 }
-function clearChat(){
 
+function clearChat() {
     document.getElementById("chat-history").innerHTML = "";
-
     document.getElementById("output").innerHTML = "";
-
 }
-function openChat(){
 
+function openChat() {
     document.getElementById("question").focus();
-
 }
-function copyAnswer(text){
 
+function copyAnswer(text) {
     navigator.clipboard.writeText(text);
-
     alert("Answer copied!");
-
 }

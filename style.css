@@ -113,3 +113,23 @@ h2 {
     color: #777;
     font-size: 14px;
 }
+
+#chat-history {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.message {
+    background: #1d2638;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+.user-message {
+    border-left: 4px solid #00ff99;
+}
+
+.ai-message {
+    border-left: 4px solid white;
+}

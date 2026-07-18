@@ -1,10 +1,24 @@
-function sayHello() {
-    let input = document.getElementById("userInput").value;
-    let output = document.getElementById("output");
+function askAI(){
 
-    if (input.trim() === "") {
-        output.textContent = "Please type something!";
-    } else {
-        output.textContent = "You said: " + input;
-    }
+let question = document.getElementById("question").value;
+
+let output = document.getElementById("output");
+
+
+if(question === ""){
+    output.innerHTML = "Ask me something first!";
+}
+else{
+
+output.innerHTML = "FearlessAI is thinking...";
+
+setTimeout(function(){
+
+output.innerHTML = 
+"FearlessAI received: " + question;
+
+},1000);
+
+}
+
 }

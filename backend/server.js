@@ -11,27 +11,47 @@ const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-app.post("/chat", async (req, res) => {
+
+app.post("/ask", async (req, res) => {
+
   try {
-    const message = req.body.message;
+
+    const question = req.body.question;
+
 
     const response = await client.responses.create({
+
       model: "gpt-4.1-mini",
-      input: message,
+
+      input: question
+
     });
+
 
     res.json({
-      reply: response.output_text,
+
+      answer: response.output_text
+
     });
+
 
   } catch (error) {
+
     console.log(error);
+
     res.status(500).json({
-      reply: "AI connection error",
+
+      answer: "FearlessAI is having trouble connecting."
+
     });
+
   }
+
 });
 
+
 app.listen(3000, () => {
+
   console.log("FearlessAI backend running on port 3000");
+
 });

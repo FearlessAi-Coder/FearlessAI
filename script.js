@@ -1,8 +1,15 @@
 async function askAI(){
 
-    document.getElementById("chat-history").innerHTML += `
-<div class="message user-message">
-<b>You:</b> ${question}
+document.getElementById("chat-history").innerHTML += `
+<div class="message ai-message">
+<b>FearlessAI:</b> ${data.answer}
+
+<br><br>
+
+<button onclick="copyAnswer('${data.answer}')">
+Copy Answer 📋
+</button>
+
 </div>
 `;
     let output = document.getElementById("output");
@@ -56,5 +63,12 @@ function clearChat(){
 function openChat(){
 
     document.getElementById("question").focus();
+
+}
+function copyAnswer(text){
+
+    navigator.clipboard.writeText(text);
+
+    alert("Answer copied!");
 
 }

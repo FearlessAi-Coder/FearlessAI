@@ -129,6 +129,12 @@ h2 {
 .user-message {
     border-left: 4px solid #00ff99;
 }
+button:nth-of-type(2){
+
+    background: #ff5555;
+    color: white;
+
+}
 
 .ai-message {
     border-left: 4px solid white;

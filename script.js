@@ -8,7 +8,10 @@ async function askAI(){
         return;
     }
 
-    output.innerHTML = "FearlessAI is thinking...";
+   output.innerHTML = `
+   FearlessAI is thinking
+   <span class="dots">...</span>
+   `;
 
     try {
 

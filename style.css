@@ -89,3 +89,22 @@ h2 {
     margin-top: 25px;
     font-size: 20px;
 }
+.dots {
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+
+    0% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+
+}

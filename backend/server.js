@@ -8,15 +8,16 @@ app.get("/", (req, res) => {
 });
 
 app.post("/ask", (req, res) => {
-
     const question = req.body.question;
 
     res.json({
         answer: "FearlessAI received: " + question
     });
-
 });
 
-app.listen(3000, () => {
-    console.log("FearlessAI server running on port 3000");
+// Render provides the port automatically
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`FearlessAI server running on port ${PORT}`);
 });

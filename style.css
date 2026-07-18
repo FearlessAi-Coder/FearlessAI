@@ -162,3 +162,34 @@ button:nth-of-type(2){
     font-size: 18px;
     padding: 16px 35px;
 }
+.container {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+.feature-card {
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+body {
+    background:
+    radial-gradient(circle at top, #122033, #0b0f19 50%);
+}
+.chat-box {
+    box-shadow: 0 0 25px rgba(0,255,153,0.15);
+}

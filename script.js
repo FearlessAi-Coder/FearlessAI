@@ -1,24 +1,35 @@
-function askAI(){
+async function askAI(){
 
-let question = document.getElementById("question").value;
+    let question = document.getElementById("question").value;
+    let output = document.getElementById("output");
 
-let output = document.getElementById("output");
+    if(question === ""){
+        output.innerHTML = "Ask me something first!";
+        return;
+    }
 
+    output.innerHTML = "FearlessAI is thinking...";
 
-if(question === ""){
-    output.innerHTML = "Ask me something first!";
-}
-else{
+    try {
 
-output.innerHTML = "FearlessAI is thinking...";
+        let response = await fetch("http://localhost:3000/ask", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: question
+            })
+        });
 
-setTimeout(function(){
+        let data = await response.json();
 
-output.innerHTML = 
-"FearlessAI received: " + question;
+        output.innerHTML = data.answer;
 
-},1000);
+    } catch(error) {
 
-}
+        output.innerHTML = "FearlessAI is offline right now.";
+
+    }
 
 }

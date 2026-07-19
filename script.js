@@ -30,8 +30,7 @@ async function askAI() {
 
     try {
 
-        let response = await fetch("/ask", {
-
+    let response = await fetch("/api/ask", {
             method: "POST",
 
             headers: {

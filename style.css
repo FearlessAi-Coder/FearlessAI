@@ -1,91 +1,1162 @@
+/* ===========================
+   FEARLESS AI V2
+   PREMIUM CSS
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#ffffff,#f7f7f7);
-    color:#222;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    background:#06080f;
+
+    color:white;
+
+    overflow-x:hidden;
+
 }
 
+/* Animated Background */
+
+.background{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:-1;
+
+    background:
+    radial-gradient(circle at top left,#0d1b45 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#c9a22722 0%,transparent 35%),
+    linear-gradient(135deg,#05060c,#0c1325,#040507);
+
+    background-size:300% 300%;
+
+    animation:bgMove 16s ease infinite;
+
+}
+
+/* Container */
+
 .container{
-    width:95%;
-    max-width:1500px;
-    margin:30px auto;
-    padding:40px;
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+/* ===================
+ NAVBAR
+=================== */
+
+.navbar{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 8%;
+
+    position:sticky;
+
+    top:0;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(0,0,0,.25);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+
 }
 
 .logo{
-    text-align:center;
-    font-size:60px;
-    font-weight:900;
-    color:#D4AF37;
-    margin-bottom:10px;
-}
 
-.version{
-    text-align:center;
-    color:#777;
-    font-size:18px;
-    margin-bottom:20px;
-}
+    font-size:34px;
 
-.tagline{
-    text-align:center;
-    font-size:42px;
-    color:#222;
-    margin-bottom:10px;
-}
-
-.description{
-    text-align:center;
-    color:#666;
-    font-size:20px;
-    max-width:800px;
-    margin:0 auto 30px;
-}
-
-.start-button{
-    display:block;
-    margin:0 auto 30px;
-    padding:18px 40px;
-    border:none;
-    border-radius:18px;
-    background:#D4AF37;
-    color:white;
-    font-size:20px;
     font-weight:bold;
+
+    color:#d4af37;
+
+    letter-spacing:2px;
+
     cursor:pointer;
+
     transition:.3s;
+
 }
 
-.start-button:hover{
+.logo:hover{
+
     transform:scale(1.05);
-    background:#c69c25;
+
 }
 
-.chat-box{
-    background:white;
-    border:3px solid #D4AF37;
-    border-radius:30px;
-    padding:30px;
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-    margin-bottom:40px;
+.nav-buttons{
+
+    display:flex;
+
+    gap:15px;
+
 }
 
-.chat-box h2{
-    color:#D4AF37;
+.nav-buttons button{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:#d4af37;
+
+    color:black;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.nav-buttons button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 30px rgba(212,175,55,.4);
+
+}
+
+/* ===================
+ HERO
+=================== */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
     text-align:center;
-    margin-bottom:20px;
+
+    padding:40px;
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(90deg,#ffffff,#d4af37);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.hero p{
+
+    max-width:850px;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    opacity:.9;
+
+}
+
+.hero-button{
+
+    margin-top:45px;
+
+    padding:20px 45px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#d4af37;
+
+    color:black;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.hero-button:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:0 15px 40px rgba(212,175,55,.45);
+
+}
+
+/* Glass Cards */
+
+.card,
+.chat-container,
+.about,
+.feature-card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+/* Titles */
+
+h2{
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+    color:#d4af37;
+
+}
+
+p{
+
+    line-height:1.8;
+
+}
+
+/* Animation */
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#d4af37;
+
+border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#ffd95b;
+
+}
+/* ===========================
+   CHAT SECTION
+=========================== */
+
+.chat-section{
+
+    width:100%;
+
+    padding:80px 8%;
+
+}
+
+.chat-container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+
+/* Header */
+
+.chat-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.chat-header h2{
+
+    margin:0;
+
+}
+
+.chat-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.chat-actions button{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#161b2d;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.chat-actions button:hover{
+
+    background:#d4af37;
+
+    color:black;
+
+    transform:translateY(-3px);
+
+}
+
+/* Chat History */
+
+#chat-history{
+
+    height:550px;
+
+    overflow-y:auto;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    margin-bottom:25px;
+
+}
+
+/* Message Bubbles */
+
+.ai-message,
+.user-message{
+
+    max-width:75%;
+
+    padding:18px 22px;
+
+    margin-bottom:18px;
+
+    border-radius:20px;
+
+    line-height:1.7;
+
+    font-size:17px;
+
+    animation:fadeUp .35s ease;
+
+}
+
+.ai-message{
+
+    background:#111827;
+
+    color:white;
+
+    border-left:4px solid #d4af37;
+
+}
+
+.user-message{
+
+    background:#d4af37;
+
+    color:black;
+
+    margin-left:auto;
+
+    text-align:left;
+
+    font-weight:bold;
+
+}
+
+/* Input */
+
+.chat-input{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+.chat-input input{
+
+    flex:1;
+
+    height:65px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:#101623;
+
+    color:white;
+
+    padding:0 22px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.chat-input input:focus{
+
+    box-shadow:0 0 20px rgba(212,175,55,.35);
+
+}
+
+.chat-input input::placeholder{
+
+    color:#888;
+
+}
+
+/* Send Button */
+
+.chat-input button{
+
+    width:70px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#d4af37;
+
+    color:black;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.chat-input button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 15px 35px rgba(212,175,55,.45);
+
+}
+
+/* Typing Indicator */
+
+.typing{
+
+    display:flex;
+
+    gap:6px;
+
+    margin-top:10px;
+
+}
+
+.typing span{
+
+    width:10px;
+
+    height:10px;
+
+    background:#d4af37;
+
+    border-radius:50%;
+
+    animation:bounce 1s infinite;
+
+}
+
+.typing span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===========================
+   FEATURES
+=========================== */
+
+.features{
+
+    width:100%;
+
+    padding:90px 8%;
+
+    text-align:center;
+
+}
+
+.features h2{
+
+    margin-bottom:50px;
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    padding:35px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+    );
+
+    transition:.6s;
+
+}
+
+.card:hover::before{
+
+    left:100%;
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px) scale(1.02);
+
+    border:1px solid #d4af37;
+
+    box-shadow:0 25px 50px rgba(212,175,55,.25);
+
+}
+
+.card h3{
+
+    margin:20px 0;
+
+    font-size:28px;
+
+    color:#d4af37;
+
+}
+
+.card p{
+
+    color:#d7d7d7;
+
+}
+
+.card{
+
+    font-size:45px;
+
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+
+.about{
+
+    width:84%;
+
+    max-width:1100px;
+
+    margin:100px auto;
+
+    padding:60px;
+
+    text-align:center;
+
+}
+
+.about p{
+
+    font-size:21px;
+
+    color:#d6d6d6;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:80px;
+
+    padding:50px 30px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.03);
+
+}
+
+footer h3{
+
+    font-size:34px;
+
+    color:#d4af37;
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    opacity:.7;
+
+}
+
+/* ===========================
+   EXTRA BUTTON EFFECTS
+=========================== */
+
+button{
+
+    transition:
+    transform .3s,
+    box-shadow .3s,
+    background .3s;
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+/* ===========================
+   SELECTION COLOR
+=========================== */
+
+::selection{
+
+    background:#d4af37;
+
+    color:black;
+
+}
+
+/* ===========================
+   IMAGE PLACEHOLDER
+=========================== */
+
+img{
+
+    max-width:100%;
+
+    border-radius:18px;
+
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+a{
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    color:white;
+
+}
+/* ===========================
+   PREMIUM ANIMATIONS
+=========================== */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.logo{
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+/* ===========================
+   FADE IN
+=========================== */
+
+.hero,
+.chat-section,
+.features,
+.about,
+footer{
+
+animation:fadeIn 1.2s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+   GLOW EFFECTS
+=========================== */
+
+.hero h1{
+
+text-shadow:
+
+0 0 10px rgba(212,175,55,.3),
+
+0 0 30px rgba(212,175,55,.25),
+
+0 0 60px rgba(212,175,55,.15);
+
+}
+
+.logo{
+
+text-shadow:
+
+0 0 15px rgba(212,175,55,.4);
+
+}
+
+/* ===========================
+   CARD GLOW
+=========================== */
+
+.card{
+
+position:relative;
+
+}
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+border-radius:24px;
+
+box-shadow:0 0 40px rgba(212,175,55,.08);
+
+opacity:0;
+
+transition:.4s;
+
+pointer-events:none;
+
+}
+
+.card:hover::after{
+
+opacity:1;
+
+}
+
+/* ===========================
+   CHAT GLOW
+=========================== */
+
+.chat-container{
+
+transition:.4s;
+
+}
+
+.chat-container:hover{
+
+box-shadow:
+
+0 25px 60px rgba(212,175,55,.18);
+
+}
+
+/* ===========================
+   BUTTON RIPPLE
+=========================== */
+
+button{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+button::before{
+
+content:"";
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+width:0;
+
+height:0;
+
+background:rgba(255,255,255,.25);
+
+border-radius:50%;
+
+transform:translate(-50%,-50%);
+
+transition:.45s;
+
+}
+
+button:hover::before{
+
+width:280px;
+
+height:280px;
+
+}
+
+/* ===========================
+   INPUT EFFECT
+=========================== */
+
+.chat-input input{
+
+transition:
+
+box-shadow .3s,
+
+transform .3s;
+
+}
+
+.chat-input input:focus{
+
+transform:scale(1.01);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1000px){
+
+.hero h1{
+
+font-size:54px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+}
+
+.chat-container{
+
+padding:20px;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:20px;
+
+padding:20px;
+
+}
+
+.hero{
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.chat-input{
+
+flex-direction:column;
+
+}
+
+.chat-input input{
+
+width:100%;
+
+}
+
+.chat-input button{
+
+width:100%;
+
 }
 
 #chat-history{
-    height:700px;
-    overflow-y:auto;
-    background:#fffdf7;
-    border:2px solid #D4AF37;
-    border-radius:20px;
-    padding:20px;
-    margin
+
+height:420px;
+
+}
+
+.about{
+
+padding:35px;
+
+width:92%;
+
+}
+
+}
+
+/* ===========================
+   SMOOTH TRANSITIONS
+=========================== */
+
+*{
+
+transition:
+
+background .3s,
+
+color .3s,
+
+border-color .3s;
+
+}

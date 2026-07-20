@@ -1,7 +1,7 @@
-/* ===========================
-   FEARLESS AI V2
-   PREMIUM CSS
-=========================== */
+/* =====================================
+   FEARLESSAI V3
+   PART 1 - GLOBAL & BACKGROUND
+===================================== */
 
 *{
     margin:0;
@@ -15,13 +15,15 @@ html{
 
 body{
 
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 
-    background:#06080f;
+    background:#070b14;
 
-    color:white;
+    color:#ffffff;
 
     overflow-x:hidden;
+
+    transition:.35s;
 
 }
 
@@ -31,243 +33,20 @@ body{
 
     position:fixed;
 
-    top:0;
-    left:0;
+    inset:0;
 
-    width:100%;
-    height:100%;
-
-    z-index:-1;
+    z-index:-2;
 
     background:
-    radial-gradient(circle at top left,#0d1b45 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#c9a22722 0%,transparent 35%),
-    linear-gradient(135deg,#05060c,#0c1325,#040507);
+    radial-gradient(circle at top left,#10204f 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#d4af3720 0%,transparent 35%),
+    linear-gradient(135deg,#04070d,#091323,#04070d);
 
     background-size:300% 300%;
 
-    animation:bgMove 16s ease infinite;
+    animation:bgMove 18s ease infinite;
 
 }
-
-/* Container */
-
-.container{
-
-    width:92%;
-
-    max-width:1400px;
-
-    margin:auto;
-
-}
-
-/* ===================
- NAVBAR
-=================== */
-
-.navbar{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:25px 8%;
-
-    position:sticky;
-
-    top:0;
-
-    backdrop-filter:blur(20px);
-
-    background:rgba(0,0,0,.25);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-
-    z-index:999;
-
-}
-
-.logo{
-
-    font-size:34px;
-
-    font-weight:bold;
-
-    color:#d4af37;
-
-    letter-spacing:2px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.logo:hover{
-
-    transform:scale(1.05);
-
-}
-
-.nav-buttons{
-
-    display:flex;
-
-    gap:15px;
-
-}
-
-.nav-buttons button{
-
-    padding:12px 20px;
-
-    border:none;
-
-    border-radius:14px;
-
-    cursor:pointer;
-
-    background:#d4af37;
-
-    color:black;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-.nav-buttons button:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 30px rgba(212,175,55,.4);
-
-}
-
-/* ===================
- HERO
-=================== */
-
-.hero{
-
-    min-height:90vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:40px;
-
-}
-
-.hero h1{
-
-    font-size:72px;
-
-    margin-bottom:25px;
-
-    background:linear-gradient(90deg,#ffffff,#d4af37);
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-}
-
-.hero p{
-
-    max-width:850px;
-
-    font-size:24px;
-
-    line-height:1.8;
-
-    opacity:.9;
-
-}
-
-.hero-button{
-
-    margin-top:45px;
-
-    padding:20px 45px;
-
-    border:none;
-
-    border-radius:18px;
-
-    background:#d4af37;
-
-    color:black;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.hero-button:hover{
-
-    transform:translateY(-4px) scale(1.03);
-
-    box-shadow:0 15px 40px rgba(212,175,55,.45);
-
-}
-
-/* Glass Cards */
-
-.card,
-.chat-container,
-.about,
-.feature-card{
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:24px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.4);
-
-}
-
-/* Titles */
-
-h2{
-
-    font-size:42px;
-
-    margin-bottom:25px;
-
-    color:#d4af37;
-
-}
-
-p{
-
-    line-height:1.8;
-
-}
-
-/* Animation */
 
 @keyframes bgMove{
 
@@ -285,60 +64,25 @@ background-position:0% 50%;
 
 }
 
-/* Scrollbar */
+/* Main Width */
 
-::-webkit-scrollbar{
+section{
 
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#111;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#d4af37;
-
-border-radius:50px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#ffd95b;
-
-}
-/* ===========================
-   CHAT SECTION
-=========================== */
-
-.chat-section{
-
-    width:100%;
-
-    padding:80px 8%;
-
-}
-
-.chat-container{
-
-    width:100%;
-
-    max-width:1200px;
+    width:min(92%,1200px);
 
     margin:auto;
 
-    padding:30px;
-
 }
 
-/* Header */
+/* ==========================
+      NAVBAR
+========================== */
 
-.chat-header{
+.navbar{
+
+    position:sticky;
+
+    top:0;
 
     display:flex;
 
@@ -346,879 +90,94 @@ background:#ffd95b;
 
     align-items:center;
 
-    margin-bottom:25px;
+    padding:16px 4%;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(10,10,18,.55);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
 
 }
 
-.chat-header h2{
-
-    margin:0;
-
-}
-
-.chat-actions{
-
-    display:flex;
-
-    gap:10px;
-
-}
-
-.chat-actions button{
-
-    width:48px;
-
-    height:48px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:#161b2d;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-    transition:.3s;
-
-}
-
-.chat-actions button:hover{
-
-    background:#d4af37;
-
-    color:black;
-
-    transform:translateY(-3px);
-
-}
-
-/* Chat History */
-
-#chat-history{
-
-    height:550px;
-
-    overflow-y:auto;
-
-    padding:20px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.03);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    margin-bottom:25px;
-
-}
-
-/* Message Bubbles */
-
-.ai-message,
-.user-message{
-
-    max-width:75%;
-
-    padding:18px 22px;
-
-    margin-bottom:18px;
-
-    border-radius:20px;
-
-    line-height:1.7;
-
-    font-size:17px;
-
-    animation:fadeUp .35s ease;
-
-}
-
-.ai-message{
-
-    background:#111827;
-
-    color:white;
-
-    border-left:4px solid #d4af37;
-
-}
-
-.user-message{
-
-    background:#d4af37;
-
-    color:black;
-
-    margin-left:auto;
-
-    text-align:left;
-
-    font-weight:bold;
-
-}
-
-/* Input */
-
-.chat-input{
-
-    display:flex;
-
-    gap:15px;
-
-    align-items:center;
-
-}
-
-.chat-input input{
-
-    flex:1;
-
-    height:65px;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:18px;
-
-    background:#101623;
-
-    color:white;
-
-    padding:0 22px;
-
-    font-size:18px;
-
-    transition:.3s;
-
-}
-
-.chat-input input:focus{
-
-    box-shadow:0 0 20px rgba(212,175,55,.35);
-
-}
-
-.chat-input input::placeholder{
-
-    color:#888;
-
-}
-
-/* Send Button */
-
-.chat-input button{
-
-    width:70px;
-
-    height:65px;
-
-    border:none;
-
-    border-radius:18px;
-
-    background:#d4af37;
-
-    color:black;
-
-    font-size:22px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.chat-input button:hover{
-
-    transform:scale(1.08);
-
-    box-shadow:0 15px 35px rgba(212,175,55,.45);
-
-}
-
-/* Typing Indicator */
-
-.typing{
-
-    display:flex;
-
-    gap:6px;
-
-    margin-top:10px;
-
-}
-
-.typing span{
-
-    width:10px;
-
-    height:10px;
-
-    background:#d4af37;
-
-    border-radius:50%;
-
-    animation:bounce 1s infinite;
-
-}
-
-.typing span:nth-child(2){
-
-    animation-delay:.2s;
-
-}
-
-.typing span:nth-child(3){
-
-    animation-delay:.4s;
-
-}
-
-@keyframes bounce{
-
-    0%,100%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-8px);
-
-    }
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(20px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-/* ===========================
-   FEATURES
-=========================== */
-
-.features{
-
-    width:100%;
-
-    padding:90px 8%;
-
-    text-align:center;
-
-}
-
-.features h2{
-
-    margin-bottom:50px;
-
-}
-
-.feature-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-}
-
-.card{
-
-    padding:35px;
-
-    transition:.35s;
-
-    cursor:pointer;
-
-    overflow:hidden;
-
-    position:relative;
-
-}
-
-.card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:100%;
-    height:100%;
-
-    background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.08),
-    transparent
-    );
-
-    transition:.6s;
-
-}
-
-.card:hover::before{
-
-    left:100%;
-
-}
-
-.card:hover{
-
-    transform:translateY(-12px) scale(1.02);
-
-    border:1px solid #d4af37;
-
-    box-shadow:0 25px 50px rgba(212,175,55,.25);
-
-}
-
-.card h3{
-
-    margin:20px 0;
+.logo{
 
     font-size:28px;
 
-    color:#d4af37;
-
-}
-
-.card p{
-
-    color:#d7d7d7;
-
-}
-
-.card{
-
-    font-size:45px;
-
-}
-
-/* ===========================
-   ABOUT
-=========================== */
-
-.about{
-
-    width:84%;
-
-    max-width:1100px;
-
-    margin:100px auto;
-
-    padding:60px;
-
-    text-align:center;
-
-}
-
-.about p{
-
-    font-size:21px;
-
-    color:#d6d6d6;
-
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-
-    margin-top:80px;
-
-    padding:50px 30px;
-
-    text-align:center;
-
-    border-top:1px solid rgba(255,255,255,.08);
-
-    background:rgba(255,255,255,.03);
-
-}
-
-footer h3{
-
-    font-size:34px;
+    font-weight:800;
 
     color:#d4af37;
 
-    margin-bottom:15px;
+    letter-spacing:1px;
+
+    cursor:pointer;
 
 }
 
-footer p{
+.nav-buttons{
 
-    opacity:.7;
+    display:flex;
 
-}
-
-/* ===========================
-   EXTRA BUTTON EFFECTS
-=========================== */
-
-button{
-
-    transition:
-    transform .3s,
-    box-shadow .3s,
-    background .3s;
+    gap:12px;
 
 }
 
-button:active{
+.nav-buttons button{
 
-    transform:scale(.95);
+    padding:10px 18px;
 
-}
+    border:none;
 
-/* ===========================
-   SELECTION COLOR
-=========================== */
+    border-radius:12px;
 
-::selection{
+    cursor:pointer;
 
     background:#d4af37;
 
-    color:black;
+    color:#111;
+
+    font-weight:bold;
+
+    transition:.25s;
 
 }
 
-/* ===========================
-   IMAGE PLACEHOLDER
-=========================== */
+.nav-buttons button:hover{
 
-img{
+    transform:translateY(-2px);
 
-    max-width:100%;
-
-    border-radius:18px;
+    box-shadow:0 10px 25px rgba(212,175,55,.30);
 
 }
-
-/* ===========================
-   LINKS
-=========================== */
-
-a{
-
-    color:#d4af37;
-
-    text-decoration:none;
-
-    transition:.3s;
-
-}
-
-a:hover{
-
-    color:white;
-
-}
-/* ===========================
-   PREMIUM ANIMATIONS
-=========================== */
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0px);
-
-}
-
-50%{
-
-transform:translateY(-15px);
-
-}
-
-100%{
-
-transform:translateY(0px);
-
-}
-
-}
-
-.logo{
-
-animation:float 5s ease-in-out infinite;
-
-}
-
-/* ===========================
-   FADE IN
-=========================== */
-
-.hero,
-.chat-section,
-.features,
-.about,
-footer{
-
-animation:fadeIn 1.2s ease;
-
-}
-
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-/* ===========================
-   GLOW EFFECTS
-=========================== */
-
-.hero h1{
-
-text-shadow:
-
-0 0 10px rgba(212,175,55,.3),
-
-0 0 30px rgba(212,175,55,.25),
-
-0 0 60px rgba(212,175,55,.15);
-
-}
-
-.logo{
-
-text-shadow:
-
-0 0 15px rgba(212,175,55,.4);
-
-}
-
-/* ===========================
-   CARD GLOW
-=========================== */
-
-.card{
-
-position:relative;
-
-}
-
-.card::after{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-border-radius:24px;
-
-box-shadow:0 0 40px rgba(212,175,55,.08);
-
-opacity:0;
-
-transition:.4s;
-
-pointer-events:none;
-
-}
-
-.card:hover::after{
-
-opacity:1;
-
-}
-
-/* ===========================
-   CHAT GLOW
-=========================== */
-
-.chat-container{
-
-transition:.4s;
-
-}
-
-.chat-container:hover{
-
-box-shadow:
-
-0 25px 60px rgba(212,175,55,.18);
-
-}
-
-/* ===========================
-   BUTTON RIPPLE
-=========================== */
-
-button{
-
-overflow:hidden;
-
-position:relative;
-
-}
-
-button::before{
-
-content:"";
-
-position:absolute;
-
-top:50%;
-
-left:50%;
-
-width:0;
-
-height:0;
-
-background:rgba(255,255,255,.25);
-
-border-radius:50%;
-
-transform:translate(-50%,-50%);
-
-transition:.45s;
-
-}
-
-button:hover::before{
-
-width:280px;
-
-height:280px;
-
-}
-
-/* ===========================
-   INPUT EFFECT
-=========================== */
-
-.chat-input input{
-
-transition:
-
-box-shadow .3s,
-
-transform .3s;
-
-}
-
-.chat-input input:focus{
-
-transform:scale(1.01);
-
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:1000px){
-
-.hero h1{
-
-font-size:54px;
-
-}
-
-.hero p{
-
-font-size:20px;
-
-}
-
-.chat-container{
-
-padding:20px;
-
-}
-
-}
-
-@media(max-width:700px){
-
-.navbar{
-
-flex-direction:column;
-
-gap:20px;
-
-padding:20px;
-
-}
+/* =====================================
+   PART 2 - HERO
+===================================== */
 
 .hero{
 
-padding:30px;
+    min-height:68vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:60px 20px 40px;
 
 }
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-}
-
-.chat-input{
-
-flex-direction:column;
-
-}
-
-.chat-input input{
-
-width:100%;
-
-}
-
-.chat-input button{
-
-width:100%;
-
-}
-
-#chat-history{
-
-height:420px;
-
-}
-
-.about{
-
-padding:35px;
-
-width:92%;
-
-}
-
-}
-
-/* ===========================
-   SMOOTH TRANSITIONS
-=========================== */
-
-*{
-
-transition:
-
-background .3s,
-
-color .3s,
-
-border-color .3s;
-
-}
-/* Light Mode */
-
-body.light-mode{
-
-    background:#f5f5f5;
-
-    color:#111;
-
-}
-
-body.light-mode .card,
-body.light-mode .chat-container,
-body.light-mode .about,
-body.light-mode .feature-card{
-
-    background:white;
-
-    color:#111;
-
-    border:1px solid #ddd;
-
-}
-
-body.light-mode .ai-message{
-
-    background:#ececec;
-
-    color:#111;
-
-}
-
-body.light-mode .chat-input input{
-
-    background:white;
-
-    color:#111;
-
-    border:1px solid #ccc;
-
-}
-
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode p{
-
-    color:#111;
-
-}
-/* ===========================
-   HERO BADGE
-=========================== */
 
 .hero-badge{
 
     display:inline-block;
 
-    padding:12px 22px;
-
-    margin-bottom:30px;
+    padding:10px 18px;
 
     border-radius:50px;
 
@@ -1228,182 +187,406 @@ body.light-mode p{
 
     color:#d4af37;
 
+    font-size:14px;
+
     font-weight:bold;
 
-    font-size:16px;
-
-    letter-spacing:1px;
-
-    animation:float 4s ease-in-out infinite;
+    margin-bottom:22px;
 
 }
 
-/* ===========================
-   HERO BUTTONS
-=========================== */
+.hero h1{
+
+    font-size:54px;
+
+    line-height:1.1;
+
+    max-width:900px;
+
+    background:linear-gradient(90deg,#ffffff,#d4af37);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    max-width:700px;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#d5d5d5;
+
+}
 
 .hero-buttons{
 
     display:flex;
 
-    justify-content:center;
-
-    gap:20px;
-
-    margin-top:35px;
+    gap:18px;
 
     flex-wrap:wrap;
 
+    justify-content:center;
+
+    margin-top:35px;
+
 }
 
-/* ===========================
-   HERO STATS
-=========================== */
+.hero-button{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#d4af37;
+
+    color:#111;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.hero-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(212,175,55,.35);
+
+}
 
 .hero-stats{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(3,1fr);
 
-    gap:25px;
+    gap:20px;
 
     width:100%;
 
-    max-width:950px;
+    max-width:900px;
 
-    margin-top:70px;
-
-}
-
-/* ===========================
-   LOGIN BUTTON
-=========================== */
-
-.login-btn{
-
-    background:transparent;
-
-    color:white;
-
-    border:2px solid #d4af37;
-
-    border-radius:16px;
-
-    padding:12px 24px;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    font-weight:bold;
+    margin-top:55px;
 
 }
 
-.login-btn:hover{
+.card{
 
-    background:#d4af37;
+    background:rgba(255,255,255,.05);
 
-    color:black;
+    backdrop-filter:blur(16px);
 
-    transform:translateY(-3px);
+    border:1px solid rgba(255,255,255,.08);
 
-}
+    border-radius:20px;
 
-/* ===========================
-   OUTPUT
-=========================== */
-
-#output{
-
-    margin:20px 0;
+    padding:22px;
 
     text-align:center;
-
-    color:#d4af37;
-
-    font-weight:bold;
-
-}
-
-/* ===========================
-   COPY BUTTON
-=========================== */
-
-.copy-btn{
-
-    float:right;
-
-    width:42px;
-
-    height:42px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#222;
-
-    color:white;
-
-    cursor:pointer;
 
     transition:.3s;
 
 }
 
-.copy-btn:hover{
+.card:hover{
 
-    background:#d4af37;
+    transform:translateY(-6px);
 
-    color:black;
+    border-color:#d4af37;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.18);
 
 }
 
+.card h3{
+
+    font-size:24px;
+
+    color:#d4af37;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    font-size:15px;
+
+    color:#cfcfcf;
+
+    line-height:1.5;
+
+}
 /* ===========================
-   CHAT HEADER TEXT
+   FEARLESS AI V2
+   PART 3 - CHAT AREA
 =========================== */
 
-.chat-header p{
-
-    color:#bdbdbd;
-
-    margin-top:8px;
-
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-
-    padding-bottom:80px;
-
-}
-
-footer p{
-
-    color:#bbbbbb;
-
-}
-
-/* ===========================
-   MOBILE
-=========================== */
-
-@media(max-width:768px){
-
-.hero-buttons{
-
+.chat-container{
+    width:90%;
+    max-width:900px;
+    height:600px;
+    margin:40px auto;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:25px;
+    display:flex;
     flex-direction:column;
-
+    box-shadow:0 0 30px rgba(0,0,0,0.25);
 }
 
-.hero-stats{
-
-    grid-template-columns:1fr;
-
+.messages{
+    flex:1;
+    overflow-y:auto;
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
 }
 
+.message{
+    max-width:75%;
+    padding:14px 18px;
+    border-radius:18px;
+    font-size:16px;
+    line-height:1.5;
+    animation:appear 0.3s ease;
+}
+
+.user-message{
+    align-self:flex-end;
+    background:#d4af37;
+    color:black;
+    border-bottom-right-radius:5px;
+}
+
+.ai-message{
+    align-self:flex-start;
+    background:#111827;
+    color:white;
+    border-bottom-left-radius:5px;
+}
+
+.input-area{
+    display:flex;
+    gap:12px;
+    margin-top:15px;
+}
+
+.input-area input{
+    flex:1;
+    padding:16px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    font-size:16px;
+    background:white;
+}
+
+.send-btn{
+    width:120px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    background:#d4af37;
+    color:black;
+    transition:0.3s;
+}
+
+.send-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #d4af37;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* ===========================
+   FEARLESS AI V2
+   PART 4 - BUTTONS + EFFECTS
+=========================== */
+
+button{
+    font-family:inherit;
+}
+
+.main-btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#d4af37;
+    color:#000;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.main-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px #d4af37;
+}
+
+.logo{
+    font-size:45px;
+    font-weight:900;
+    text-align:center;
+    margin-top:30px;
+    color:#d4af37;
+    text-shadow:0 0 20px rgba(212,175,55,0.5);
+}
+
+.logo span{
+    display:inline-block;
+    animation:pulse 2s infinite;
+}
+
+.version{
+    text-align:center;
+    opacity:0.7;
+    margin-top:10px;
+    font-size:15px;
+}
+
+.typing{
+    display:flex;
+    gap:5px;
+    padding:12px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    background:#d4af37;
+    border-radius:50%;
+    animation:bounce 1s infinite;
+}
+
+.dot:nth-child(2){
+    animation-delay:0.2s;
+}
+
+.dot:nth-child(3){
+    animation-delay:0.4s;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.1);
+    }
+}
+/* ===========================
+   FEARLESS AI V2
+   PART 5 - RESPONSIVE + MODES
+=========================== */
+
+/* DARK MODE */
+.dark-mode{
+    background:#050816;
+    color:white;
+}
+
+.dark-mode .chat-container{
+    background:rgba(15,23,42,0.8);
+}
+
+.dark-mode .input-area input{
+    background:#1e293b;
+    color:white;
+}
+
+
+/* WHITE / GOLD MODE */
+.light-mode{
+    background:#ffffff;
+    color:#111;
+}
+
+.light-mode .chat-container{
+    background:#f8f8f8;
+    box-shadow:0 0 30px rgba(212,175,55,0.25);
+}
+
+.light-mode .ai-message{
+    background:#eeeeee;
+    color:#111;
+}
+
+.light-mode .input-area input{
+    background:white;
+    border:1px solid #ddd;
+}
+
+
+/* SCROLLBAR */
+.messages::-webkit-scrollbar{
+    width:8px;
+}
+
+.messages::-webkit-scrollbar-thumb{
+    background:#d4af37;
+    border-radius:20px;
+}
+
+
+/* PHONE SUPPORT */
+@media(max-width:700px){
+
+    .chat-container{
+        width:95%;
+        height:75vh;
+        padding:15px;
+    }
+
+    .logo{
+        font-size:35px;
+    }
+
+    .message{
+        max-width:90%;
+        font-size:14px;
+    }
+
+    .input-area{
+        flex-direction:column;
+    }
+
+    .send-btn{
+        width:100%;
+        height:50px;
+    }
 }

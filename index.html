@@ -4,396 +4,148 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>FearlessAI</title>
 
     <link rel="stylesheet" href="style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<!-- Animated Background -->
+<div class="app">
 
-<div class="background"></div>
+    <!-- Sidebar -->
 
-<!-- ===========================
-        NAVBAR
-=========================== -->
+    <aside class="sidebar">
 
-<nav class="navbar">
+        <div class="logo">
 
-    <div class="logo">
-
-        ⚡ FearlessAI
-
-    </div>
-
-    <div class="nav-buttons">
-
-        <button id="themeButton">
-
-            🌙
-
-        </button>
-
-        <button class="login-btn">
-
-            Login
-
-        </button>
-
-        <button class="hero-button">
-
-            Get Started
-
-        </button>
-
-    </div>
-
-</nav>
-
-<!-- ===========================
-          HERO
-=========================== -->
-
-<section class="hero">
-
-    <div class="hero-badge">
-
-        🚀 AI Prototype v2.0
-
-    </div>
-
-    <h1>
-
-        The Future of AI
-        <br>
-        Starts Here.
-
-    </h1>
-
-    <p>
-
-        Build.
-        Learn.
-        Create.
-        Solve.
-        Code.
-
-        <br><br>
-
-        FearlessAI is your personal AI assistant
-        built to help with homework, coding,
-        business, creativity, writing,
-        and everyday life.
-
-    </p>
-
-    <div class="hero-buttons">
-
-        <button
-        class="hero-button"
-        onclick="openChat()">
-
-            ⚡ Start Chatting
-
-        </button>
-
-        <button class="hero-button">
-
-            🚀 Explore
-
-        </button>
-
-    </div>
-
-    <div class="hero-stats">
-
-        <div class="card">
-
-            <h3>24/7</h3>
-
-            <p>Always Online</p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>⚡</h3>
-
-            <p>Fast Responses</p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>∞</h3>
-
-            <p>Unlimited Ideas</p>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ===========================
-        PREMIUM CHAT
-=========================== -->
-
-<section class="chat-section">
-
-    <div class="chat-container">
-
-        <div class="chat-header">
+            <div class="logo-icon">⚡</div>
 
             <div>
 
-                <h2>⚡ FearlessAI Chat</h2>
-
-                <p>Your intelligent AI assistant</p>
-
-            </div>
-
-            <div class="chat-actions">
-
-                <button title="New Chat">➕</button>
-
-                <button title="Attach File">📎</button>
-
-                <button title="Voice">🎤</button>
-
-                <button title="Image">🖼️</button>
-
-                <button onclick="clearChat()" title="Clear Chat">🗑️</button>
-
-                <button title="Settings">⚙️</button>
+                <h2>FearlessAI</h2>
+                <p>AI Without Limits</p>
 
             </div>
 
         </div>
 
-        <div id="chat-history">
+        <button class="new-chat">
 
-            <div class="ai-message">
+            + New Chat
 
-                <strong>⚡ FearlessAI</strong>
+        </button>
 
-                <br><br>
+        <div class="history">
 
-                👋 Welcome to FearlessAI.
+            <h4>Recent Chats</h4>
 
-                <br><br>
+            <div class="chat-item active">
 
-                I can help you with:
+                💬 Welcome
 
-                <br>📚 Homework
-                <br>💻 Coding
-                <br>📝 Writing
-                <br>🧠 Brainstorming
-                <br>🌍 General knowledge
-                <br>🚀 Business ideas
+            </div>
+
+            <div class="chat-item">
+
+                💻 Coding Help
+
+            </div>
+
+            <div class="chat-item">
+
+                📚 Homework
+
+            </div>
+
+            <div class="chat-item">
+
+                🎨 Image Ideas
 
             </div>
 
         </div>
 
-        <div id="output"></div>
+        <div class="sidebar-bottom">
 
-        <div class="chat-input">
+            <button>⚙ Settings</button>
+
+            <button>👤 Profile</button>
+
+        </div>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <h1>FearlessAI</h1>
+
+            <div class="status">
+
+                ● Online
+
+            </div>
+
+        </header>
+
+        <section class="messages">
+
+            <div class="welcome">
+
+                <h1>
+
+                    Welcome to
+                    <span>FearlessAI</span>
+
+                </h1>
+
+                <p>
+
+                    Ask anything.
+                    Code.
+                    Learn.
+                    Create.
+                    Brainstorm.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <footer class="chatbar">
+
+            <button class="icon-btn">📎</button>
 
             <input
-                id="question"
-                type="text"
-                placeholder="Ask FearlessAI anything..."
-                autocomplete="off"
-            >
+            type="text"
+            placeholder="Message FearlessAI...">
 
-            <button onclick="askAI()">
+            <button class="icon-btn">🎤</button>
+
+            <button class="send">
 
                 ➜
 
             </button>
 
-        </div>
+        </footer>
 
-    </div>
+    </main>
 
-</section>
-<!-- ===========================
-        FEATURES
-=========================== -->
-
-<section class="features">
-
-    <h2>Why Choose FearlessAI?</h2>
-
-    <div class="feature-grid">
-
-        <div class="card">
-            🧠
-            <h3>Smart AI</h3>
-            <p>Get intelligent answers in seconds.</p>
-        </div>
-
-        <div class="card">
-            💻
-            <h3>Code Assistant</h3>
-            <p>Create websites, apps and fix code instantly.</p>
-        </div>
-
-        <div class="card">
-            📚
-            <h3>Study Smarter</h3>
-            <p>Homework, math, science, languages and more.</p>
-        </div>
-
-        <div class="card">
-            ✍️
-            <h3>Creative Writing</h3>
-            <p>Write stories, essays, emails and scripts.</p>
-        </div>
-
-        <div class="card">
-            🚀
-            <h3>Business Ideas</h3>
-            <p>Launch projects and grow your ideas faster.</p>
-        </div>
-
-        <div class="card">
-            🔒
-            <h3>Privacy First</h3>
-            <p>Your conversations stay private.</p>
-        </div>
-
-        <div class="card">
-            🌍
-            <h3>Worldwide</h3>
-            <p>Available anytime, anywhere.</p>
-        </div>
-
-        <div class="card">
-            ⚡
-            <h3>Lightning Fast</h3>
-            <p>Quick responses powered by advanced AI.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===========================
-        LIVE STATS
-=========================== -->
-
-<section class="features">
-
-    <h2>FearlessAI at a Glance</h2>
-
-    <div class="feature-grid">
-
-        <div class="card">
-            <h3>24/7</h3>
-            <p>Always Ready</p>
-        </div>
-
-        <div class="card">
-            <h3>∞</h3>
-            <p>Unlimited Questions</p>
-        </div>
-
-        <div class="card">
-            <h3>⚡</h3>
-            <p>Fast Responses</p>
-        </div>
-
-        <div class="card">
-            <h3>💡</h3>
-            <p>Creative Solutions</p>
-        </div>
-
-    </div>
-
-</section>
-<!-- ===========================
-        ABOUT
-=========================== -->
-
-<section class="about">
-
-    <h2>About FearlessAI</h2>
-
-    <p>
-
-        FearlessAI is designed to make artificial intelligence simple,
-        fast, and useful for everyone. Whether you're studying,
-        building a business, writing code, creating content,
-        or just curious, FearlessAI is here to help.
-
-    </p>
-
-</section>
-
-<!-- ===========================
-        ROADMAP
-=========================== -->
-
-<section class="features">
-
-    <h2>🚀 Coming Soon</h2>
-
-    <div class="feature-grid">
-
-        <div class="card">
-            🎤
-            <h3>Voice Assistant</h3>
-            <p>Talk naturally with FearlessAI.</p>
-        </div>
-
-        <div class="card">
-            🖼️
-            <h3>Image Generation</h3>
-            <p>Create stunning AI-generated images.</p>
-        </div>
-
-        <div class="card">
-            📂
-            <h3>Chat History</h3>
-            <p>Save and organize every conversation.</p>
-        </div>
-
-        <div class="card">
-            👤
-            <h3>User Accounts</h3>
-            <p>Sync your chats across devices.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===========================
-        FOOTER
-=========================== -->
-
-<footer>
-
-    <h3>⚡ FearlessAI</h3>
-
-    <p>
-        AI Without Limits.
-    </p>
-
-    <br>
-
-    <p>
-        Built with ❤️ by the FearlessAI Team.
-    </p>
-
-</footer>
+</div>
 
 <script src="script.js"></script>
 

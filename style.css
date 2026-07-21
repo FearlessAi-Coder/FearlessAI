@@ -1,7 +1,44 @@
-/* =====================================
-   FEARLESSAI V3
-   PART 1 - GLOBAL & BACKGROUND
-===================================== */
+/* ==========================================================
+   FEARLESS AI V3
+   PREMIUM UI - PART 1
+   ========================================================== */
+
+:root{
+
+    /* Colors */
+
+    --bg:#05070f;
+    --bg2:#0d1324;
+    --bg3:#121b31;
+
+    --card:rgba(17,23,40,.90);
+
+    --gold:#ffd54f;
+    --gold2:#ffb300;
+
+    --white:#ffffff;
+    --text:#d9e3ff;
+    --muted:#8ea2d4;
+
+    --blue:#4da3ff;
+    --cyan:#00e5ff;
+
+    --success:#00d084;
+    --danger:#ff5f6d;
+
+    --border:rgba(255,255,255,.08);
+
+    --radius:22px;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+    --transition:.35s ease;
+
+}
+
+
+/* Reset */
 
 *{
     margin:0;
@@ -9,80 +46,472 @@
     box-sizing:border-box;
 }
 
+
 html{
     scroll-behavior:smooth;
 }
 
+
 body{
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    background:#070b14;
+    background:
+    linear-gradient(
+        135deg,
+        var(--bg),
+        var(--bg2),
+        var(--bg3)
+    );
 
-    color:#ffffff;
+    color:var(--text);
+
+    min-height:100vh;
 
     overflow-x:hidden;
 
-    transition:.35s;
-
 }
 
-/* Animated Background */
 
-.background{
+/* Background Glow */
+
+body::before{
+
+    content:"";
 
     position:fixed;
 
-    inset:0;
+    top:-200px;
+    left:-200px;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,213,79,.12);
+
+    filter:blur(120px);
 
     z-index:-2;
 
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    bottom:-250px;
+    right:-250px;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
     background:
-    radial-gradient(circle at top left,#10204f 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#d4af3720 0%,transparent 35%),
-    linear-gradient(135deg,#04070d,#091323,#04070d);
+    rgba(77,163,255,.10);
 
-    background-size:300% 300%;
+    filter:blur(130px);
 
-    animation:bgMove 18s ease infinite;
+    z-index:-2;
 
 }
 
-@keyframes bgMove{
 
-0%{
-background-position:0% 50%;
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
 }
 
-50%{
-background-position:100% 50%;
+::-webkit-scrollbar-track{
+    background:#0a1020;
 }
 
-100%{
-background-position:0% 50%;
-}
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        var(--gold),
+        var(--gold2)
+    );
+
+    border-radius:20px;
 
 }
 
-/* Main Width */
+::-webkit-scrollbar-thumb:hover{
 
-section{
+    background:
+    #ffe082;
 
-    width:min(92%,1200px);
+}
+
+
+/* Links */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* Buttons */
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    transition:
+    var(--transition);
+
+}
+
+
+/* Inputs */
+
+input,
+textarea{
+
+    outline:none;
+
+    border:none;
+
+    background:none;
+
+    color:var(--white);
+
+}
+
+
+/* Images */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+/* Main Container */
+
+.container{
+
+    width:min(1200px,92%);
 
     margin:auto;
 
+    padding:35px;
+
 }
 
-/* ==========================
-      NAVBAR
-========================== */
 
-.navbar{
+/* Logo */
 
-    position:sticky;
+.logo{
 
-    top:0;
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:var(--gold);
+
+    letter-spacing:1px;
+
+}
+
+
+/* Version */
+
+.version{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* Hero */
+
+.hero{
+
+    margin-top:70px;
+
+    text-align:center;
+
+}
+
+
+.hero h1{
+
+    font-size:62px;
+
+    color:white;
+
+    line-height:1.1;
+
+}
+
+
+.hero h1 span{
+
+    color:var(--gold);
+
+}
+
+
+.hero p{
+
+    margin-top:20px;
+
+    color:var(--muted);
+
+    font-size:19px;
+
+    max-width:750px;
+
+    margin-inline:auto;
+
+    line-height:1.8;
+
+}
+
+
+/* Glass Card */
+
+.glass{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    backdrop-filter:blur(22px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* Fade Animation */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+.fade-up{
+
+    animation:
+    fadeUp .8s ease forwards;
+
+}
+/* ==========================================================
+   FEARLESS AI V3
+   PREMIUM UI - PART 2
+   CHAT LAYOUT
+   ========================================================== */
+
+
+/* =========================
+   CHAT CONTAINER
+========================= */
+
+.chat-wrapper{
+
+    margin-top:50px;
+
+    width:100%;
+
+    height:720px;
+
+    display:flex;
+
+    overflow:hidden;
+
+    border-radius:26px;
+
+    background:rgba(15,20,35,.92);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.45);
+
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+    width:280px;
+
+    background:rgba(9,13,25,.98);
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:25px;
+
+}
+
+
+.sidebar-title{
+
+    color:var(--gold);
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+
+.new-chat{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:15px;
+
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+    color:#111;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+    transition:.3s;
+
+}
+
+
+.new-chat:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 30px rgba(255,213,79,.35);
+
+}
+
+
+.chat-history{
+
+    flex:1;
+
+    overflow-y:auto;
+
+}
+
+
+.history-item{
+
+    padding:14px;
+
+    margin-bottom:10px;
+
+    border-radius:14px;
+
+    color:var(--muted);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.history-item:hover{
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+}
+
+
+/* =========================
+   MAIN CHAT
+========================= */
+
+.chat-area{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:relative;
+
+}
+
+
+/* Header */
+
+.chat-header{
+
+    height:80px;
 
     display:flex;
 
@@ -90,503 +519,1242 @@ section{
 
     align-items:center;
 
-    padding:16px 4%;
-
-    backdrop-filter:blur(18px);
-
-    background:rgba(10,10,18,.55);
+    padding:0 30px;
 
     border-bottom:1px solid rgba(255,255,255,.08);
 
-    z-index:1000;
+}
+
+
+.chat-header h2{
+
+    color:white;
+
+    font-size:24px;
 
 }
 
-.logo{
 
-    font-size:28px;
+.status{
 
-    font-weight:800;
+    color:#00d084;
 
-    color:#d4af37;
-
-    letter-spacing:1px;
-
-    cursor:pointer;
+    font-size:14px;
 
 }
 
-.nav-buttons{
 
-    display:flex;
+/* Messages */
 
-    gap:12px;
+.messages{
 
-}
+    flex:1;
 
-.nav-buttons button{
+    overflow-y:auto;
 
-    padding:10px 18px;
-
-    border:none;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    background:#d4af37;
-
-    color:#111;
-
-    font-weight:bold;
-
-    transition:.25s;
-
-}
-
-.nav-buttons button:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:0 10px 25px rgba(212,175,55,.30);
-
-}
-/* =====================================
-   PART 2 - HERO
-===================================== */
-
-.hero{
-
-    min-height:68vh;
+    padding:35px;
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:60px 20px 40px;
-
-}
-
-.hero-badge{
-
-    display:inline-block;
-
-    padding:10px 18px;
-
-    border-radius:50px;
-
-    background:rgba(212,175,55,.12);
-
-    border:1px solid rgba(212,175,55,.35);
-
-    color:#d4af37;
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    margin-bottom:22px;
-
-}
-
-.hero h1{
-
-    font-size:54px;
-
-    line-height:1.1;
-
-    max-width:900px;
-
-    background:linear-gradient(90deg,#ffffff,#d4af37);
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-    margin-bottom:20px;
-
-}
-
-.hero p{
-
-    max-width:700px;
-
-    font-size:18px;
-
-    line-height:1.7;
-
-    color:#d5d5d5;
-
-}
-
-.hero-buttons{
-
-    display:flex;
-
     gap:18px;
 
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    margin-top:35px;
-
 }
 
-.hero-button{
 
-    padding:14px 28px;
+/* User Message */
 
-    border:none;
+.user-message{
 
-    border-radius:14px;
+    align-self:flex-end;
 
-    background:#d4af37;
+    max-width:75%;
+
+    padding:16px 18px;
+
+    border-radius:22px 22px 6px 22px;
+
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
 
     color:#111;
 
-    font-size:16px;
+    font-weight:600;
 
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.25s;
+    animation:fadeUp .4s;
 
 }
 
-.hero-button:hover{
 
-    transform:translateY(-3px);
+/* AI Message */
 
-    box-shadow:0 12px 30px rgba(212,175,55,.35);
+.ai-message{
 
-}
+    align-self:flex-start;
 
-.hero-stats{
+    max-width:75%;
 
-    display:grid;
+    padding:18px;
 
-    grid-template-columns:repeat(3,1fr);
+    border-radius:22px 22px 22px 6px;
 
-    gap:20px;
-
-    width:100%;
-
-    max-width:900px;
-
-    margin-top:55px;
-
-}
-
-.card{
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(16px);
+    background:rgba(255,255,255,.06);
 
     border:1px solid rgba(255,255,255,.08);
 
-    border-radius:20px;
+    color:var(--text);
+
+    line-height:1.7;
+
+    animation:fadeUp .4s;
+
+}
+
+
+/* Timestamp */
+
+.time{
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    opacity:.6;
+
+}
+
+
+/* =========================
+   INPUT BAR
+========================= */
+
+.input-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
 
     padding:22px;
 
-    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.chat-input{
+
+    flex:1;
+
+    height:60px;
+
+    padding:0 22px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+
+.chat-input::placeholder{
+
+    color:rgba(255,255,255,.45);
+
+}
+
+
+/* Send Button */
+
+.send-btn{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+    color:#111;
+
+    font-size:24px;
+
+    font-weight:bold;
 
     transition:.3s;
 
 }
 
-.card:hover{
 
-    transform:translateY(-6px);
+.send-btn:hover{
 
-    border-color:#d4af37;
+    transform:scale(1.08);
 
-    box-shadow:0 15px 35px rgba(212,175,55,.18);
+    box-shadow:0 12px 35px rgba(255,213,79,.35);
 
 }
 
-.card h3{
 
-    font-size:24px;
+/* Voice Button */
 
-    color:#d4af37;
+.voice-btn{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.voice-btn:hover{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+
+/* Attachment */
+
+.attach-btn{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.attach-btn:hover{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+
+/* =========================
+   TYPING ANIMATION
+========================= */
+
+.typing{
+
+    display:flex;
+
+    gap:6px;
+
+    padding:14px 18px;
+
+    width:70px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.typing span{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    animation:typing 1.2s infinite;
+
+}
+
+.typing span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes typing{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+        opacity:.4;
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+        opacity:1;
+
+    }
+
+}
+/* ==========================================================
+   FEARLESS AI V3
+   PREMIUM UI - PART 3
+   EFFECTS • SETTINGS • PROFILE • RESPONSIVE
+========================================================== */
+
+
+/* ===========================
+   BUTTON RIPPLE
+=========================== */
+
+.btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    left:50%;
+    top:50%;
+    border-radius:50%;
+    background:rgba(255,255,255,.35);
+    transform:translate(-50%,-50%);
+    transition:.6s;
+}
+
+.btn:active::after{
+    width:350px;
+    height:350px;
+}
+
+
+/* ===========================
+   HOVER GLOW
+=========================== */
+
+.glow:hover{
+
+    box-shadow:
+    0 0 15px rgba(255,213,79,.4),
+    0 0 40px rgba(255,213,79,.25);
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ===========================
+   SETTINGS PANEL
+=========================== */
+
+.settings-panel{
+
+    position:fixed;
+
+    right:-380px;
+
+    top:0;
+
+    width:380px;
+
+    height:100vh;
+
+    background:#0b1220;
+
+    transition:.4s;
+
+    border-left:1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
+
+    padding:25px;
+
+}
+
+.settings-panel.active{
+
+    right:0;
+
+}
+
+.settings-title{
+
+    color:var(--gold);
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+}
+
+.setting{
+
+    margin-bottom:25px;
+
+}
+
+.setting label{
+
+    display:block;
 
     margin-bottom:10px;
 
-}
-
-.card p{
-
-    font-size:15px;
-
-    color:#cfcfcf;
-
-    line-height:1.5;
+    color:white;
 
 }
+
+.setting select{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#111827;
+
+    color:white;
+
+    border-radius:12px;
+
+    border:none;
+
+}
+
+
 /* ===========================
-   FEARLESS AI V2
-   PART 3 - CHAT AREA
+   PROFILE
 =========================== */
 
-.chat-container{
-    width:90%;
-    max-width:900px;
-    height:600px;
-    margin:40px auto;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
-    padding:25px;
+.profile{
+
     display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+}
+
+.avatar{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold2)
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#111;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
+
+.profile-name{
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+.profile-role{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+
+/* ===========================
+   PROFILE MENU
+=========================== */
+
+.profile-menu{
+
+    position:absolute;
+
+    top:75px;
+
+    right:25px;
+
+    width:220px;
+
+    background:#101828;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    display:none;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.profile-menu.active{
+
+    display:block;
+
+    animation:fadeUp .25s;
+
+}
+
+.profile-menu div{
+
+    padding:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.profile-menu div:hover{
+
+    background:rgba(255,255,255,.06);
+
+}
+
+
+/* ===========================
+   LOADING SCREEN
+=========================== */
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#05070f;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999;
+
     flex-direction:column;
-    box-shadow:0 0 30px rgba(0,0,0,0.25);
+
+}
+
+.loader-logo{
+
+    font-size:48px;
+
+    color:var(--gold);
+
+    font-weight:bold;
+
+}
+
+.loader-bar{
+
+    margin-top:30px;
+
+    width:260px;
+
+    height:7px;
+
+    background:#1b2236;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.loader-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--gold),
+        var(--gold2)
+    );
+
+    animation:load 3s linear forwards;
+
+}
+
+@keyframes load{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:100%;
+    }
+
+}
+
+
+/* ===========================
+   NOTIFICATION
+=========================== */
+
+.toast{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    background:#101828;
+
+    color:white;
+
+    padding:18px 24px;
+
+    border-radius:16px;
+
+    border-left:5px solid var(--gold);
+
+    animation:fadeUp .3s;
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:900px){
+
+.sidebar{
+
+display:none;
+
+}
+
+.chat-wrapper{
+
+height:calc(100vh - 40px);
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
 }
 
 .messages{
-    flex:1;
-    overflow-y:auto;
-    padding:15px;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+
+padding:18px;
+
 }
 
-.message{
-    max-width:75%;
-    padding:14px 18px;
-    border-radius:18px;
-    font-size:16px;
-    line-height:1.5;
-    animation:appear 0.3s ease;
-}
-
-.user-message{
-    align-self:flex-end;
-    background:#d4af37;
-    color:black;
-    border-bottom-right-radius:5px;
-}
-
+.user-message,
 .ai-message{
-    align-self:flex-start;
-    background:#111827;
-    color:white;
-    border-bottom-left-radius:5px;
+
+max-width:92%;
+
 }
 
-.input-area{
-    display:flex;
-    gap:12px;
-    margin-top:15px;
+.chat-input{
+
+font-size:15px;
+
 }
 
-.input-area input{
-    flex:1;
-    padding:16px;
-    border:none;
-    outline:none;
-    border-radius:15px;
-    font-size:16px;
-    background:white;
 }
 
-.send-btn{
-    width:120px;
-    border:none;
-    border-radius:15px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
-    background:#d4af37;
-    color:black;
-    transition:0.3s;
-}
 
-.send-btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 15px #d4af37;
-}
-
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
 /* ===========================
-   FEARLESS AI V2
-   PART 4 - BUTTONS + EFFECTS
+   EXTRA ANIMATIONS
 =========================== */
 
-button{
-    font-family:inherit;
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
 }
 
-.main-btn{
-    padding:15px 35px;
-    border:none;
-    border-radius:30px;
-    background:#d4af37;
-    color:#000;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+50%{
+
+transform:translateY(-10px);
+
 }
 
-.main-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 25px #d4af37;
 }
 
-.logo{
-    font-size:45px;
-    font-weight:900;
-    text-align:center;
-    margin-top:30px;
-    color:#d4af37;
-    text-shadow:0 0 20px rgba(212,175,55,0.5);
-}
+.float{
 
-.logo span{
-    display:inline-block;
-    animation:pulse 2s infinite;
-}
+animation:float 3s ease-in-out infinite;
 
-.version{
-    text-align:center;
-    opacity:0.7;
-    margin-top:10px;
-    font-size:15px;
-}
-
-.typing{
-    display:flex;
-    gap:5px;
-    padding:12px;
-}
-
-.dot{
-    width:8px;
-    height:8px;
-    background:#d4af37;
-    border-radius:50%;
-    animation:bounce 1s infinite;
-}
-
-.dot:nth-child(2){
-    animation-delay:0.2s;
-}
-
-.dot:nth-child(3){
-    animation-delay:0.4s;
-}
-
-@keyframes bounce{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
 }
 
 @keyframes pulse{
-    50%{
-        transform:scale(1.1);
-    }
-}
-/* ===========================
-   FEARLESS AI V2
-   PART 5 - RESPONSIVE + MODES
-=========================== */
 
-/* DARK MODE */
-.dark-mode{
-    background:#050816;
-    color:white;
+0%{
+
+transform:scale(1);
+
 }
 
-.dark-mode .chat-container{
-    background:rgba(15,23,42,0.8);
+50%{
+
+transform:scale(1.05);
+
 }
 
-.dark-mode .input-area input{
-    background:#1e293b;
-    color:white;
+100%{
+
+transform:scale(1);
+
 }
 
+}
 
-/* WHITE / GOLD MODE */
-.light-mode{
-    background:#ffffff;
+.pulse{
+
+animation:pulse 2s infinite;
+
+}
+/* ==========================================
+   FEARLESS AI V3
+   PART 4
+   PREMIUM MESSAGE STYLING
+========================================== */
+
+.chat-area{
+    background:#090d18;
+}
+
+/* Messages */
+
+.messages{
+    padding:18px;
+    gap:12px;
+}
+
+.message{
+    display:flex;
+    gap:10px;
+    animation:fadeUp .25s ease;
+}
+
+.avatar-small{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    flex-shrink:0;
+}
+
+.ai-avatar{
+    background:linear-gradient(135deg,#ffd54f,#ffb300);
     color:#111;
 }
 
-.light-mode .chat-container{
-    background:#f8f8f8;
-    box-shadow:0 0 30px rgba(212,175,55,0.25);
+.user-avatar{
+    background:#3b82f6;
+    color:white;
 }
 
-.light-mode .ai-message{
-    background:#eeeeee;
+.bubble{
+    max-width:78%;
+    padding:12px 14px;
+    border-radius:14px;
+    line-height:1.6;
+    word-wrap:break-word;
+    font-size:15px;
+}
+
+.ai-bubble{
+    background:#141b2d;
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.user-bubble{
+    background:linear-gradient(135deg,#ffd54f,#ffb300);
     color:#111;
 }
 
-.light-mode .input-area input{
-    background:white;
-    border:1px solid #ddd;
+/* Code Blocks */
+
+pre{
+    background:#0b1220;
+    padding:14px;
+    border-radius:10px;
+    overflow:auto;
+    margin-top:10px;
 }
 
+code{
+    font-family:Consolas,monospace;
+    color:#7dd3fc;
+    font-size:14px;
+}
 
-/* SCROLLBAR */
+/* Inline Code */
+
+p code{
+    background:#1b2438;
+    padding:2px 6px;
+    border-radius:5px;
+}
+
+/* Tables */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+}
+
+th{
+    background:#111827;
+    padding:10px;
+    text-align:left;
+}
+
+td{
+    padding:10px;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* Search */
+
+.search-box{
+    width:100%;
+    height:42px;
+    border-radius:10px;
+    background:#111827;
+    padding:0 14px;
+    color:white;
+}
+
+/* Suggestions */
+
+.suggestions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+
+.suggestion{
+    padding:8px 14px;
+    background:#151c2d;
+    border-radius:999px;
+    cursor:pointer;
+    transition:.25s;
+    font-size:14px;
+}
+
+.suggestion:hover{
+    background:#202b42;
+    transform:translateY(-2px);
+}
+
+/* Copy Button */
+
+.copy-btn{
+    margin-top:8px;
+    padding:6px 12px;
+    border-radius:8px;
+    background:#202b42;
+    color:white;
+    font-size:13px;
+}
+
+.copy-btn:hover{
+    background:#2b3958;
+}
+
+/* AI Thinking */
+
+.thinking{
+    display:flex;
+    gap:5px;
+    padding:8px;
+}
+
+.thinking span{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#ffd54f;
+    animation:typing 1s infinite;
+}
+
+.thinking span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.thinking span:nth-child(3){
+    animation-delay:.4s;
+}
+/* ==========================================
+   FEARLESS AI V3
+   PART 5
+   COMPACT PREMIUM UI
+========================================== */
+
+/* Main App */
+
+.app{
+    display:flex;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#090d18;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:240px;
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.sidebar-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px;
+    font-size:18px;
+    font-weight:700;
+    color:#ffd54f;
+}
+
+.sidebar-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:11px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    color:#d8d8d8;
+    transition:.25s;
+}
+
+.sidebar-item:hover{
+    background:#161d31;
+}
+
+.sidebar-item.active{
+    background:#202b42;
+    color:#fff;
+}
+
+/* Chat */
+
+.chat{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+
+.topbar{
+    height:58px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 18px;
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.topbar-title{
+    font-size:17px;
+    font-weight:600;
+    color:white;
+}
+
+/* Messages */
+
+.messages{
+    flex:1;
+    overflow:auto;
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* Bubble */
+
+.bubble{
+    border-radius:14px;
+    padding:12px 14px;
+    font-size:15px;
+    line-height:1.55;
+    max-width:760px;
+}
+
+/* Bottom Input */
+
+.bottom-bar{
+    padding:12px 16px;
+    border-top:1px solid rgba(255,255,255,.05);
+    background:#090d18;
+}
+
+.input-wrapper{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#111827;
+    border-radius:14px;
+    padding:8px;
+}
+
+.input-wrapper input{
+    flex:1;
+    background:transparent;
+    color:white;
+    font-size:15px;
+    padding:8px;
+}
+
+.icon-btn{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:#1c2740;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.25s;
+}
+
+.icon-btn:hover{
+    background:#2a3a5e;
+}
+
+.send{
+    background:linear-gradient(135deg,#ffd54f,#ffb300);
+    color:#111;
+    font-weight:bold;
+}
+
+.send:hover{
+    transform:scale(1.05);
+}
+
+/* Welcome */
+
+.welcome{
+    text-align:center;
+    margin:auto;
+}
+
+.welcome h1{
+    font-size:32px;
+    color:white;
+    margin-bottom:8px;
+}
+
+.welcome span{
+    color:#ffd54f;
+}
+
+.welcome p{
+    color:#9ca3af;
+    font-size:15px;
+    max-width:520px;
+    margin:auto;
+}
+
+/* Scroll */
+
 .messages::-webkit-scrollbar{
-    width:8px;
+    width:6px;
 }
 
 .messages::-webkit-scrollbar-thumb{
-    background:#d4af37;
-    border-radius:20px;
+    background:#2d3b5e;
+    border-radius:999px;
+}
+/* ===============================
+   FEARLESS AI V3
+   PART 6
+   PREMIUM COMPONENTS
+================================= */
+
+/* Cards */
+
+.card{
+    background:#101827;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;
+    padding:16px;
+    transition:.25s;
 }
 
+.card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(255,213,79,.25);
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
 
-/* PHONE SUPPORT */
-@media(max-width:700px){
+/* Dashboard Grid */
 
-    .chat-container{
-        width:95%;
-        height:75vh;
-        padding:15px;
-    }
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+    padding:16px;
+}
 
-    .logo{
-        font-size:35px;
-    }
+.stat-card h3{
+    color:#9ca3af;
+    font-size:13px;
+    margin-bottom:6px;
+}
 
-    .message{
-        max-width:90%;
-        font-size:14px;
-    }
+.stat-card h1{
+    font-size:28px;
+    color:#fff;
+}
 
-    .input-area{
-        flex-direction:column;
-    }
+.stat-up{
+    color:#00d084;
+}
 
-    .send-btn{
-        width:100%;
-        height:50px;
-    }
+.stat-down{
+    color:#ff5f6d;
+}
+
+/* Tool Cards */
+
+.tool-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:14px;
+}
+
+.tool-card{
+    background:#121b2f;
+    border-radius:14px;
+    padding:18px;
+    cursor:pointer;
+    transition:.25s;
+    text-align:center;
+}
+
+.tool-card:hover{
+    transform:translateY(-4px);
+    background:#1b2741;
+}
+
+.tool-icon{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.tool-title{
+    font-weight:600;
+    color:#fff;
+}
+
+.tool-desc{
+    font-size:13px;
+    color:#9ca3af;
+    margin-top:6px;
+}
+
+/* Drag & Drop Upload */
+
+.upload-box{
+    border:2px dashed rgba(255,255,255,.15);
+    border-radius:16px;
+    padding:28px;
+    text-align:center;
+    transition:.25s;
+}
+
+.upload-box:hover{
+    border-color:#ffd54f;
+    background:rgba(255,213,79,.05);
+}
+
+/* Notification Badge */
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:20px;
+    height:20px;
+    padding:0 6px;
+    border-radius:999px;
+    background:#ff5f6d;
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* Fade */
+
+.fade{
+    animation:fadeUp .3s ease;
 }

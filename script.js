@@ -1,41 +1,44 @@
-console.log("FearlessAI V4 Loaded");
+// =================================
+// FEARLESSAI V4
+// WORKING FRONTEND SCRIPT
+// =================================
+
+console.log("FearlessAI is running");
 
 
 const input = document.querySelector(".message-input");
-const sendBtn = document.querySelector(".send");
+const sendButton = document.querySelector(".send");
 const messages = document.querySelector(".messages");
-const newChatBtn = document.querySelector(".new-chat");
-const attachBtn = document.querySelector(".icon-btn");
+const newChat = document.querySelector(".new-chat");
+const attachButton = document.querySelector(".icon-btn");
 
 
-function addMessage(text,type){
+// Add messages
 
-    const msg = document.createElement("div");
+function addMessage(text, type){
 
-    msg.className = "message " + type;
+    const message = document.createElement("div");
+
+    message.className = "message " + type;
 
 
-    msg.innerHTML = `
+    message.innerHTML = `
 
         <div class="avatar ${type}">
             ${type === "user" ? "U" : "⚡"}
         </div>
 
-
         <div class="bubble">
-
             ${text}
-
             <div class="message-time">
                 ${new Date().toLocaleTimeString()}
             </div>
-
         </div>
 
     `;
 
 
-    messages.appendChild(msg);
+    messages.appendChild(message);
 
     messages.scrollTop = messages.scrollHeight;
 
@@ -43,12 +46,14 @@ function addMessage(text,type){
 
 
 
+// Send message
+
 function sendMessage(){
 
     const text = input.value.trim();
 
 
-    if(!text) return;
+    if(text === "") return;
 
 
     document.querySelector(".welcome")?.remove();
@@ -57,121 +62,85 @@ function sendMessage(){
     addMessage(text,"user");
 
 
-    input.value="";
+    input.value = "";
 
-
-    // Temporary AI reply
 
     setTimeout(()=>{
 
         addMessage(
-        "⚡ FearlessAI received your message. Real AI connection coming next.",
+        "⚡ FearlessAI received your message!",
         "ai"
         );
 
-    },800);
+    },700);
 
 }
 
 
 
-sendBtn.addEventListener(
-"click",
-sendMessage
-);
+// Send button
+
+if(sendButton){
+
+    sendButton.onclick = sendMessage;
+
+}
 
 
+// Enter key
 
-input.addEventListener(
-"keydown",
-(e)=>{
+if(input){
 
-    if(e.key==="Enter"){
+    input.addEventListener("keydown",(e)=>{
 
-        sendMessage();
+        if(e.key === "Enter"){
 
-    }
-
-});
-
-
-
-
-// NEW CHAT BUTTON
-
-newChatBtn.addEventListener(
-"click",
-()=>{
-
-    messages.innerHTML = `
-
-    <div class="welcome">
-
-    <h1>
-    Welcome to <span>FearlessAI</span>
-    </h1>
-
-    <p>
-    Ask anything, create, learn and build.
-    </p>
-
-    </div>
-
-    `;
-
-});
-
-
-
-
-// ATTACH BUTTON
-
-attachBtn.addEventListener(
-"click",
-()=>{
-
-    const fileInput=document.createElement("input");
-
-    fileInput.type="file";
-
-
-    fileInput.click();
-
-
-    fileInput.onchange=()=>{
-
-        if(fileInput.files[0]){
-
-            addMessage(
-            "📎 Uploaded: "+fileInput.files[0].name,
-            "user"
-            );
+            sendMessage();
 
         }
 
-    };
-
-});
-
-
-
-
-// CHAT HISTORY BUTTONS
-
-document.querySelectorAll(".chat-item")
-.forEach(item=>{
-
-
-    item.addEventListener(
-    "click",
-    ()=>{
-
-        addMessage(
-        "Opened "+item.innerText,
-        "ai"
-        );
-
     });
 
+}
 
-});
+
+
+// New chat button
+
+if(newChat){
+
+    newChat.onclick = ()=>{
+
+        messages.innerHTML = `
+
+        <div class="welcome">
+
+        <h1>
+        Welcome to <span>FearlessAI</span>
+        </h1>
+
+        <p>
+        Ask anything, create, learn and build.
+        </p>
+
+        </div>
+
+        `;
+
+    };
+
+}
+
+
+
+// Attach button
+
+if(attachButton){
+
+    attachButton.onclick = ()=>{
+
+        alert("File upload feature coming soon ⚡");
+
+    };
+
+}
